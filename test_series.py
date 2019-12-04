@@ -1,5 +1,5 @@
 import pytest
-from series import fibonacci, lucas
+from series import fibonacci, lucas, sum_series
 
 
 def test_fib_one():
@@ -80,3 +80,43 @@ def test_lucas_seven():
     with pytest.raises(ValueError) as context:
         lucas(-3)
     assert str(context.value) == 'numbers smaller than zero can not be used'
+
+def test_sum_one():
+    expected = 0
+    actual = sum_series(0)
+    assert actual == expected
+
+def test_sum_two():
+    expected = 1
+    actual = sum_series(1)
+    assert actual == expected
+
+def test_sum_three():
+    expected = 1
+    actual = sum_series(2)
+    assert actual == expected
+
+def test_sum_four():
+    expected = 2
+    actual = sum_series(3)
+    assert actual == expected
+
+def test_sum_five():
+    expected = 3
+    actual = sum_series(4)
+    assert actual == expected
+
+def test_sum_six():
+    expected = 5
+    actual = sum_series(5)
+    assert actual == expected
+
+def test_sum_seven():
+    expected = 8
+    actual = sum_series(6)
+    assert actual == expected
+
+def test_sum_eight():
+    expected = 13
+    actual = sum_series(7)
+    assert actual == expected
